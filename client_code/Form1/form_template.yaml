@@ -110,35 +110,35 @@ components:
       properties: {text: '(3, 5)'}
       type: Button
     - layout_properties: {col_xs: 6, row: CRPYXZ, width_xs: 1}
-      name: button_28
+      name: cell_3_6
       properties: {text: '(3, 6)'}
       type: Button
     - layout_properties: {col_xs: 0, row: PJTZRX, width_xs: 1}
-      name: button_29
+      name: cell_4_0
       properties: {text: '(4, 0)'}
       type: Button
     - layout_properties: {col_xs: 1, row: PJTZRX, width_xs: 1}
-      name: button_30
+      name: cell_4_1
       properties: {text: '(4, 1)'}
       type: Button
     - layout_properties: {col_xs: 2, row: PJTZRX, width_xs: 1}
-      name: button_31
+      name: cell_4_2
       properties: {text: '(4, 2)'}
       type: Button
     - layout_properties: {col_xs: 3, row: PJTZRX, width_xs: 1}
-      name: button_32
+      name: cell_4_3
       properties: {text: '(4, 3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: PJTZRX, width_xs: 1}
-      name: button_33
+      name: cell_4_4
       properties: {text: '(4, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: PJTZRX, width_xs: 1}
-      name: button_34
+      name: cell_4_5
       properties: {text: '(4, 5)'}
       type: Button
     - layout_properties: {col_xs: 6, row: PJTZRX, width_xs: 1}
-      name: button_35
+      name: cell_4_6
       properties: {text: '(4, 6)'}
       type: Button
     - layout_properties: {col_xs: 0, row: SKUVKZ, width_xs: 1}
