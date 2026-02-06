@@ -106,7 +106,7 @@ components:
       properties: {text: '(3, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: CRPYXZ, width_xs: 1}
-      name: button_27
+      name: cell_3_5
       properties: {text: '(3, 5)'}
       type: Button
     - layout_properties: {col_xs: 6, row: CRPYXZ, width_xs: 1}
