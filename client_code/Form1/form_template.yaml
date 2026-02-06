@@ -58,51 +58,51 @@ components:
       properties: {text: '(1, 6)'}
       type: Button
     - layout_properties: {col_xs: 0, row: BZTNCU, width_xs: 1}
-      name: button_15
+      name: cell_2_0
       properties: {text: '(2, 0)'}
       type: Button
     - layout_properties: {col_xs: 1, row: BZTNCU, width_xs: 1}
-      name: button_16
+      name: cell_2_1
       properties: {text: '(2, 1)'}
       type: Button
     - layout_properties: {col_xs: 2, row: BZTNCU, width_xs: 1}
-      name: button_17
+      name: cell_2_2
       properties: {text: '(2, 2)'}
       type: Button
     - layout_properties: {col_xs: 3, row: BZTNCU, width_xs: 1}
-      name: button_18
+      name: cell_2_3
       properties: {text: '(2, 3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: BZTNCU, width_xs: 1}
-      name: button_19
+      name: cell_2_4
       properties: {text: '(2, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: BZTNCU, width_xs: 1}
-      name: button_20
+      name: cell_2_5
       properties: {text: '(2, 5)'}
       type: Button
     - layout_properties: {col_xs: 6, row: BZTNCU, width_xs: 1}
-      name: button_21
+      name: cell_2_6
       properties: {text: '(2, 6)'}
       type: Button
     - layout_properties: {col_xs: 0, row: CRPYXZ, width_xs: 1}
-      name: button_22
+      name: cell_3_0
       properties: {text: '(3, 0)'}
       type: Button
     - layout_properties: {col_xs: 1, row: CRPYXZ, width_xs: 1}
-      name: button_23
+      name: cell_3_1
       properties: {text: '(3, 1)'}
       type: Button
     - layout_properties: {col_xs: 2, row: CRPYXZ, width_xs: 1}
-      name: button_24
+      name: cell_3_2
       properties: {text: '(3, 2)'}
       type: Button
     - layout_properties: {col_xs: 3, row: CRPYXZ, width_xs: 1}
-      name: button_25
+      name: cell_3_3
       properties: {text: '(3, 3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: CRPYXZ, width_xs: 1}
-      name: button_26
+      name: cell_3_4
       properties: {text: '(3, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: CRPYXZ, width_xs: 1}
