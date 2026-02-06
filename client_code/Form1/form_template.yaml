@@ -18,43 +18,43 @@ components:
       properties: {text: '(0,  3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: GSERER, width_xs: 1}
-      name: button_5
+      name: cell_0_4
       properties: {text: '(0, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: GSERER, width_xs: 1}
-      name: button_6
+      name: cell_0_5
       properties: {text: '(0, 5)'}
       type: Button
     - layout_properties: {col_xs: 0, row: NMZYVH, width_xs: 1}
-      name: button_4
+      name: cell_1_0
       properties: {text: '(1, 0)'}
       type: Button
     - layout_properties: {col_xs: 6, row: GSERER, width_xs: 1}
-      name: button_7
+      name: cell_0_6
       properties: {text: '(0, 6)'}
       type: Button
     - layout_properties: {col_xs: 1, row: NMZYVH, width_xs: 1}
-      name: button_9
+      name: cell_1_1
       properties: {text: '(1, 1)'}
       type: Button
     - layout_properties: {col_xs: 2, row: NMZYVH, width_xs: 1}
-      name: button_10
+      name: cell_1_2
       properties: {text: '(1, 2)'}
       type: Button
     - layout_properties: {col_xs: 3, row: NMZYVH, width_xs: 1}
-      name: button_11
+      name: cell_1_3
       properties: {text: '(1, 3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: NMZYVH, width_xs: 1}
-      name: button_12
+      name: cell_1_4
       properties: {text: '(1, 4)'}
       type: Button
     - layout_properties: {col_xs: 5, row: NMZYVH, width_xs: 1}
-      name: button_13
+      name: cell_1_5
       properties: {text: '(1, 5)'}
       type: Button
     - layout_properties: {col_xs: 6, row: NMZYVH, width_xs: 1}
-      name: button_14
+      name: cell_1_6
       properties: {text: '(1, 6)'}
       type: Button
     - layout_properties: {col_xs: 0, row: BZTNCU, width_xs: 1}
