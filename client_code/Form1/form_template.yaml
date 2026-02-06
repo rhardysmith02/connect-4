@@ -1,32 +1,44 @@
 components:
 - components:
   - components:
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '0', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 0, row: GSERER, width_xs: 1}
       name: cell_0_0
       properties: {text: '(0, 0)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '1', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 1, row: GSERER, width_xs: 1}
       name: cell_0_1
       properties: {text: '(0, 1)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '2', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 2, row: GSERER, width_xs: 1}
       name: cell_0_2
       properties: {text: '(0, 2)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '3', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 3, row: GSERER, width_xs: 1}
       name: cell_0_3
       properties: {text: '(0,  3)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '4', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 4, row: GSERER, width_xs: 1}
       name: cell_0_4
       properties: {text: '(0, 4)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '5', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 5, row: GSERER, width_xs: 1}
       name: cell_0_5
       properties: {text: '(0, 5)'}
@@ -35,7 +47,9 @@ components:
       name: cell_1_0
       properties: {text: '(1, 0)'}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '6', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 6, row: GSERER, width_xs: 1}
       name: cell_0_6
       properties: {text: '(0, 6)'}
