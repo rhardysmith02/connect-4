@@ -2,19 +2,19 @@ components:
 - components:
   - components:
     - layout_properties: {col_xs: 0, row: GSERER, width_xs: 1}
-      name: button_1
+      name: cell_0_0
       properties: {text: '(0, 0)'}
       type: Button
     - layout_properties: {col_xs: 1, row: GSERER, width_xs: 1}
-      name: button_2
+      name: cell_0_1
       properties: {text: '(0, 1)'}
       type: Button
     - layout_properties: {col_xs: 2, row: GSERER, width_xs: 1}
-      name: button_3
+      name: cell_0_2
       properties: {text: '(0, 2)'}
       type: Button
     - layout_properties: {col_xs: 3, row: GSERER, width_xs: 1}
-      name: button_8
+      name: cell_0_3
       properties: {text: '(0,  3)'}
       type: Button
     - layout_properties: {col_xs: 4, row: GSERER, width_xs: 1}
