@@ -1,0 +1,9 @@
+components: []
+container:
+  properties:
+    align: left
+    bold: false
+    margin: [0, null, null, 0]
+    visible: true
+  type: DataRowPanel
+is_package: true
