@@ -177,7 +177,5 @@ roles:
   name: dense
 - components: [Link]
   name: selected
-- components: []
-  name: circular
-- components: []
-  name: game-board
+- {components: null, name: circular}
+- {components: null, name: game-board}
