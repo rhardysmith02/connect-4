@@ -177,3 +177,7 @@ roles:
   name: dense
 - components: [Link]
   name: selected
+- components: []
+  name: circular
+- components: []
+  name: game-board

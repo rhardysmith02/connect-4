@@ -798,3 +798,21 @@ textarea.anvil-component[disabled] {
 https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-material-design-elevations
 */
 
+/* Custom Role for circular game slots */
+.anvil-role-circular {
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 0 !important;
+  min-height: 45px !important;
+  min-width: 45px !important;
+  border: 2px solid #1a3a6d !important; /* Darker blue border for contrast */
+  transition: background-color 0.2s; /* Smooth color change when piece is placed */
+}
+
+/* Make the board itself look like a blue plastic frame */
+.anvil-role-game-board {
+  background-color: #2e59a8 !important;
+  padding: 15px !important;
+  border-radius: 15px !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
