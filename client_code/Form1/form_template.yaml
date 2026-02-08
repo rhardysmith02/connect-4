@@ -14,9 +14,11 @@ components:
     name: text_area_2
     properties: {height: 109.18359375, text: Rules/Gameplay/Interface explanation}
     type: TextArea
-  - layout_properties: {grid_position: 'HPJRRQ,AJYANN'}
+  - event_bindings: {}
+    layout_properties: {grid_position: 'HPJRRQ,AJYANN'}
     name: drop_down_1
-    properties: {}
+    properties:
+      items: [CNN, Transformer]
     type: DropDown
   - components:
     - data_bindings:
@@ -24,7 +26,7 @@ components:
       event_bindings: {click: column_click}
       layout_properties: {col_xs: 0, row: GSERER, width_xs: 1}
       name: cell_0_0
-      properties: {role: circular, text: '(0, 0)'}
+      properties: {role: circular, text: '(0, 0)', visible: true}
       type: Button
     - data_bindings:
       - {code: '1', property: tag, writeback: false}
@@ -96,10 +98,6 @@ components:
       name: cell_1_6
       properties: {role: circular, text: '(1, 6)'}
       type: Button
-    - layout_properties: {col_xs: 8, row: NMZYVH, width_xs: 3}
-      name: button_1
-      properties: {text: button_1}
-      type: Button
     - layout_properties: {col_xs: 0, row: BZTNCU, width_xs: 1}
       name: cell_2_0
       properties: {role: circular, text: '(2, 0)'}
@@ -127,6 +125,11 @@ components:
     - layout_properties: {col_xs: 6, row: BZTNCU, width_xs: 1}
       name: cell_2_6
       properties: {role: circular, text: '(2, 6)'}
+      type: Button
+    - event_bindings: {click: restart_btn_click}
+      layout_properties: {col_xs: 8, row: BZTNCU, width_xs: 3}
+      name: button_1
+      properties: {role: raised, text: Restart game}
       type: Button
     - layout_properties: {col_xs: 0, row: CRPYXZ, width_xs: 1}
       name: cell_3_0

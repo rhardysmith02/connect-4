@@ -54,16 +54,17 @@ class Form1(Form1Template):
       print(f"Error: Component {cell_name} not found.")
 
   def call_ai_on_aws(self):
-    # Sends board to your AWS Lightsail brain.py
-    ai_col = anvil.server.call('get_move', self.board) 
+    # Requirement #3: Allow user to select the bot
+    selected_bot = self.drop_down_1.selected_value
+
+    # Send the board AND the bot choice to AWS
+    ai_col = anvil.server.call('get_move', self.board, selected_bot) 
+
     row = self.get_lowest_empty_row(ai_col)
-
     if row is not None:
-      self.make_move(row, ai_col, 2) # AI Move (Yellow)
-
-      # Check if AI won
+      self.make_move(row, ai_col, 2)
       if self.check_winner(2):
-        Notification("The AI won! Better luck next time.").show()
+        Notification("The AI won!").show()
         self.game_over = True
       else:
         self.current_player = 1
@@ -99,3 +100,18 @@ class Form1(Form1Template):
           return True
 
     return False
+
+  def restart_btn_click(self, **event_args):
+    # Reset internal board matrix
+    self.board = [[0 for _ in range(7)] for _ in range(6)]
+    self.game_over = False
+    self.current_player = 1
+
+    # Loop through buttons and reset to 'empty' color
+    for r in range(6):
+      for c in range(7):
+        cell = getattr(self, f"cell_{r}_{c}")
+        cell.background = "white" # Or #eeeeee for a light gray look
+        cell.text = "" 
+
+    Notification("Game reset! User (Red) goes first.").show()
