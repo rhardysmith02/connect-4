@@ -798,21 +798,48 @@ textarea.anvil-component[disabled] {
 https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-material-design-elevations
 */
 
-/* Custom Role for circular game slots */
-.anvil-role-circular {
-  border-radius: 50% !important;
-  aspect-ratio: 1 / 1 !important;
-  padding: 0 !important;
-  min-height: 45px !important;
-  min-width: 45px !important;
-  border: 2px solid #1a3a6d !important; /* Darker blue border for contrast */
-  transition: background-color 0.2s; /* Smooth color change when piece is placed */
+/* Realistic Blue Plastic Board */
+.anvil-role-game-board {
+  background: linear-gradient(145deg, #2e59a8, #1e3a6d) !important;
+  padding: 25px !important;
+  border-radius: 20px !important;
+  border: 4px solid #1a3a6d !important;
+  box-shadow: inset 5px 5px 10px #1a3a6d, 
+    inset -5px -5px 10px #2e59a8,
+    10px 10px 20px rgba(0,0,0,0.4);
 }
 
-/* Make the board itself look like a blue plastic frame */
-.anvil-role-game-board {
-  background-color: #2e59a8 !important;
-  padding: 15px !important;
-  border-radius: 15px !important;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+/* Perfect Circular Slots & Chips */
+.anvil-role-circular, .anvil-role-circular .btn {
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important; /* Clips square colored corners */
+  border: none !important;
+  background-image: none !important; /* Removes Material Design shading */
+}
+
+.anvil-role-circular .btn {
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3) !important; /* Gives slot depth */
+}
+
+/* Prevents square hover/click effects */
+.anvil-role-circular .btn:hover, 
+.anvil-role-circular .btn:focus, 
+.anvil-role-circular .btn:active {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* White Restart Button Role */
+.anvil-role-white-button .btn {
+  background-color: white !important;
+  color: #2e59a8 !important; /* Blue text to match board */
+  font-weight: bold !important;
+  border: 1px solid #2e59a8 !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+}
+
+.anvil-role-white-button .btn:hover {
+  background-color: #f8f8f8 !important;
 }
