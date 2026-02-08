@@ -96,7 +96,7 @@ components:
       name: cell_1_6
       properties: {role: circular, text: '(1, 6)'}
       type: Button
-    - layout_properties: {col_xs: 9, row: BUMIDQ, width_xs: 3}
+    - layout_properties: {col_xs: 8, row: NMZYVH, width_xs: 3}
       name: button_1
       properties: {text: button_1}
       type: Button
