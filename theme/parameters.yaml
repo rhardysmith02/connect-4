@@ -179,5 +179,4 @@ roles:
   name: selected
 - {components: null, name: circular}
 - {components: null, name: game-board}
-- components: []
-  name: white-button
+- {components: null, name: white-button}
