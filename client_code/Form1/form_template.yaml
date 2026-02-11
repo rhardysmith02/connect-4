@@ -1,15 +1,5 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'OJECPZ,GMVEUO'}
-    name: text_area_1
-    properties:
-      height: 254.59765625
-      text: |-
-        Have a detailed description of how you built your NNs, some pictures of boards
-        you can classify (find the best move) easily and some boards where you can’t, and
-        analysis of why some boards are classified poorly. Think of this as a medium
-        article you would write about playing Connect 4 with your network.
-    type: TextArea
   - layout_properties: {grid_position: 'GCYDCI,SSZOVI'}
     name: text_area_2
     properties: {height: 109.18359375, text: 'Rules of Da Game:'}
@@ -24,7 +14,7 @@ components:
       event_bindings: {click: column_click}
       layout_properties: {col_xs: 0, row: IRRDGZ, width_xs: 1}
       name: button_3
-      properties: {role: raised-slot, text: button_3}
+      properties: {role: raised-slot, text: button_3, visible: true}
       type: Button
     - data_bindings:
       - {code: '1', property: tag, writeback: false}
@@ -249,7 +239,7 @@ components:
     - event_bindings: {click: btn_read_more_click}
       layout_properties: {col_xs: 8, row: PJTZRX, width_xs: 3}
       name: button_2
-      properties: {role: null, text: Read about me!}
+      properties: {role: info-button, text: Read about me!}
       type: Button
     - layout_properties: {col_xs: 0, row: SKUVKZ, width_xs: 1}
       name: cell_5_0
@@ -292,11 +282,18 @@ components:
   type: ColumnPanel
 - layout_properties: {slot: title}
   name: headline_1
-  properties: {bold: true, role: headline, text: HAL 9000-1}
+  properties:
+    bold: true
+    role: [hal-header, headline]
+    text: HAL 9000-1
   type: Label
 - layout_properties: {slot: nav-right}
   name: headline_2
   properties: {role: headline, text: 'From: Hardy Smith, Kumar Rishu, Pranit Yadav, & Connor Flaherty'}
+  type: Label
+- layout_properties: {slot: top-left-btn}
+  name: label_1
+  properties: {role: hal-eye}
   type: Label
 container:
   properties: {html: '@theme:standard-page.html', visible: true}

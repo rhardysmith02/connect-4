@@ -28,10 +28,15 @@ class Form1(Form1Template):
           cell.role = "circular" 
         except AttributeError:
           pass
+          
+    slot_buttons = [self.button_3, self.button_4, self.button_5, 
+                    self.button_6, self.button_7, self.button_8, self.button_9]
+    for btn in slot_buttons:
+      btn.text = ""
 
     # Reset status message to HAL theme
-    self.label_status.text = "I am ready to begin, Dave. Your move."
-    self.label_status.foreground = "white"
+    self.label_status.text = "I am ready to begin. Your move."
+    self.label_status.foreground = "black"
 
   def column_click(self, **event_args):
     """Event handler for the 7 interactive 'drop' buttons above the board"""
@@ -47,17 +52,17 @@ class Form1(Form1Template):
         self.make_move(row, col_index, 1) # User Move (Red)
 
         if self.check_winner(1):
-          self.label_status.text = "Congratulations. You have defeated HAL 9000."
+          self.label_status.text = "Congratulations. You have defeated HAL 9000-1."
           self.label_status.foreground = "red"
           self.game_over = True
           return
 
         # Prepare for HAL's response
         self.current_player = 2
-        self.label_status.text = "HAL 9000 is calculating..."
+        self.label_status.text = "HAL 9000-1 is calculating..."
         self.call_ai_on_aws()
       else:
-        Notification("This column is full, Dave. Please try another.").show()
+        Notification("This column is full. Please try another.").show()
 
   def get_lowest_empty_row(self, col):
     """Finds the lowest available row in a column"""
@@ -89,11 +94,11 @@ class Form1(Form1Template):
     if row is not None:
       self.make_move(row, ai_col, 2)
       if self.check_winner(2):
-        self.label_status.text = "I'm sorry, Dave. I'm afraid I can't let you win."
+        self.label_status.text = "I'm afraid I can't let you win."
         self.label_status.foreground = "red"
         self.game_over = True
       else:
-        self.label_status.text = "Your move, Dave."
+        self.label_status.text = "Your move."
         self.current_player = 1
 
   def check_winner(self, player):
@@ -121,7 +126,7 @@ class Form1(Form1Template):
 
   def btn_read_more_click(self, **event_args):
     """Requirement #2: Opens the 'Medium Article' report"""
-    alert(content="The HAL 9000-1 utilizes a CNN-Transformer ensemble. The CNN excels at local spatial patterns, while the Transformer evaluates long-range board relationships.", 
+    alert(content="Have a detailed description of how you built your NNs, some pictures of boards you can classify (find the best move) easily and some boards where you can’t, and analysis of why some boards are classified poorly. Think of this as a medium article you would write about playing Connect 4 with your network.", 
           title="HAL 9000-1 Technical Analysis", 
           large=True)
 
