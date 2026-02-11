@@ -4,22 +4,22 @@ components:
     name: timer_1
     properties: {interval: 0}
     type: Timer
-  - layout_properties: {grid_position: 'BYWTPX,UCPZFD'}
+  - layout_properties: {grid_position: 'UYMXRG,UXOEDN'}
     name: hal_eye
     properties: {role: hal-eye}
     type: Label
-  - layout_properties: {grid_position: 'GAZJDS,FLYJRW'}
+  - layout_properties: {grid_position: 'IWCXCY,CDQZAL'}
     name: headline_1
     properties:
       bold: true
       role: [hal-header, headline]
-      text: HAL 9000-1
+      text: 'Your Connect4 Pal: HAL 9000-1'
     type: Label
-  - layout_properties: {grid_position: 'DEEFBM,DLONNQ GCYDCI,SSZOVI'}
+  - layout_properties: {grid_position: 'GCYDCI,SSZOVI'}
     name: text_area_2
     properties: {height: 109.18359375, text: 'Rules of Da Game:'}
     type: TextArea
-  - layout_properties: {grid_position: 'DEEFBM,DLONNQ XHGRGG,OASNTW'}
+  - layout_properties: {grid_position: 'XHGRGG,OASNTW'}
     name: label_status
     properties: {}
     type: Label
@@ -284,7 +284,7 @@ components:
       name: cell_5_6
       properties: {role: circular, text: '(5, 6)'}
       type: Button
-    layout_properties: {grid_position: 'DEEFBM,DLONNQ OMCQXQ,BCIOCS'}
+    layout_properties: {grid_position: 'OMCQXQ,BCIOCS'}
     name: grid_panel_1
     properties:
       role: game-board

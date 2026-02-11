@@ -844,23 +844,33 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   background-color: #f8f8f8 !important;
 }
 
-/* HAL 9000 Header Style */
+/* Ensure the header bar is the container */
 .anvil-role-hal-header {
   background-color: #000000 !important;
-  color: #ff0000 !important; /* HAL's signature red */
-  font-family: 'Courier New', Courier, monospace;
-  border-bottom: 2px solid #ff0000;
-  text-shadow: 0 0 10px #ff0000;
+  border: 2px solid #ff0000 !important;
+  position: relative !important; /* This is the anchor for the eye */
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Red "Eye" Status Indicator */
+/* Position the eye OVER the bar */
 .anvil-role-hal-eye {
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle, #ff0000 0%, #8b0000 70%, #000000 100%);
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ff0000;
-  margin: 10px auto;
+  position: absolute !important;
+  left: 20px !important; /* Moves it to the far left of the black bar */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+/* Ensure the title text doesn't overlap the eye */
+.anvil-role-hal-header .anvil-component {
+  color: #ff0000 !important;
+  font-family: 'Courier New', monospace !important;
+  margin-left: 60px; /* Pushes text right so the eye has room */
 }
 
 /* Raised slot with center dot */
