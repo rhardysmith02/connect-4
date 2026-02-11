@@ -844,37 +844,6 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   background-color: #f8f8f8 !important;
 }
 
-/* Combined HAL Header and Eye */
-.anvil-role-hal-header {
-  background-color: #000000 !important;
-  border-bottom: 2px solid #ff0000 !important;
-  position: relative !important;
-  padding: 20px 0 !important;
-  min-height: 80px !important;
-  /* Font Style */
-  color: #ff0000 !important;
-  font-family: 'Courier New', monospace !important;
-  font-weight: bold !important;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
-  text-align: center !important;
-}
-
-/* The Eye created as a part of the Header */
-.anvil-role-hal-header:before {
-  content: "";
-  position: absolute;
-  left: 30px; /* Position from left */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  /* HAL Eye visual */
-  background: radial-gradient(circle, #ff0000 10%, #440000 80%, #000000 100%);
-  box-shadow: 0 0 15px #ff0000;
-  border: 2px solid #333;
-  z-index: 1;
-}
 
 /* Raised slot with center dot */
 .anvil-role-raised-slot .btn {
@@ -929,12 +898,44 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   color: #ff0000 !important;
 }
 
-/* This class will be toggled by Python when HAL is "thinking" */
-.anvil-role-hal-header.hal-thinking:before {
-  animation: hal-pulse 0.2s infinite ease-in-out;
+/* Lock in the base header style */
+.anvil-role-hal-header {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #ff0000 !important;
+  position: relative !important;
+  padding: 20px 0 !important;
+  min-height: 80px !important;
+  /* Lock the font size here */
+  color: #ff0000 !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 24px !important; 
+  font-weight: bold !important;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
+  text-align: center !important;
 }
 
-@keyframes hal-pulse {
+/* The Eye */
+.anvil-role-hal-header:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff0000 10%, #440000 80%, #000000 100%);
+  box-shadow: 0 0 15px #ff0000;
+  border: 2px solid #333;
+  z-index: 1;
+}
+
+/* Flicker only targets the eye's opacity, not the text */
+.anvil-role-hal-header.hal-thinking:before {
+  animation: hal-eye-flicker 0.2s infinite !important;
+}
+
+@keyframes hal-eye-flicker {
   0% { opacity: 1; }
   50% { opacity: 0.3; }
   100% { opacity: 1; }

@@ -185,3 +185,4 @@ roles:
 - {name: raised-slot}
 - {name: bright-dropdown}
 - {name: info-button}
+- {name: hal-thinking}

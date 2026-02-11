@@ -19,7 +19,12 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
-- layout_properties: {slot: nav-right}
+- components:
+  - layout_properties: {}
+    name: headline_2
+    properties: {role: headline, text: 'Hardy Smith, Kumar Rishu, Pranit Yadav, Connor Flaherty'}
+    type: Label
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel

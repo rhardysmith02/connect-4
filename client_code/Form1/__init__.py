@@ -28,7 +28,8 @@ class Form1(Form1Template):
           cell.role = "circular" 
         except AttributeError:
           pass
-          
+
+    # Ensure slot buttons are blank in the Design Tab
     slot_buttons = [self.button_3, self.button_4, self.button_5, 
                     self.button_6, self.button_7, self.button_8, self.button_9]
     for btn in slot_buttons:
@@ -37,14 +38,24 @@ class Form1(Form1Template):
     # Reset status message to HAL theme
     self.label_status.text = "I am ready to begin. Your move."
     self.label_status.foreground = "black"
+    # Ensure header is in base state
+    self.headline_1.role = "hal-header"
 
   def column_click(self, **event_args):
     """Event handler for the 7 interactive 'drop' buttons above the board"""
+    # 1. STOP if no opponent is selected
+    if self.drop_down_opponent.selected_value is None:
+      Notification("Please select an opponent before starting the game.").show()
+      return
+      
     if self.game_over:
       return
 
-    # Identify which column was clicked using the 'Tag' property
-    col_index = event_args['sender'].tag
+    # FIXED: Convert Tag to integer to prevent TypeError
+    try:
+      col_index = event_args['sender'].tag
+    except (TypeError, ValueError):
+      return
 
     if self.current_player == 1:
       row = self.get_lowest_empty_row(col_index)
@@ -59,7 +70,6 @@ class Form1(Form1Template):
 
         # Prepare for HAL's response
         self.current_player = 2
-        self.label_status.text = "HAL 9000-1 is calculating..."
         self.call_ai_on_aws()
       else:
         Notification("This column is full. Please try another.").show()
@@ -84,35 +94,34 @@ class Form1(Form1Template):
       print(f"Error: Component {cell_name} not found.")
 
   def call_ai_on_aws(self):
-    """Revised for Integrated CSS Eye"""
-    # 2. START FLICKER: Add the thinking class to the header role
-  # (Assuming your header component is named headline_1)
-  self.headline_1.role = ["hal-header", "hal-thinking"]
+    """Requirement #3: Sends board to AWS with integrated CSS flicker"""
+    # START FLICKER: Use a list to apply multiple roles
+    self.headline_1.role = ["hal-header", "hal-thinking"]
 
-  self.label_status.text = "HAL 9000-1 is calculating..."
-  self.label_status.foreground = "orange"
+    self.label_status.text = "HAL 9000-1 is calculating..."
+    self.label_status.foreground = "orange"
 
-  selected_bot = self.drop_down_opponent.selected_value
-  try:
-    ai_col = anvil.server.call('get_move', self.board, selected_bot) 
-  except Exception as e:
-    print(f"Server Error: {e}")
-    ai_col = 0 
+    selected_bot = self.drop_down_opponent.selected_value
+    try:
+      ai_col = anvil.server.call('get_move', self.board, selected_bot) 
+    except Exception as e:
+      print(f"Server Error: {e}")
+      ai_col = 0 
 
-    # 3. STOP FLICKER: Remove the thinking class
-  self.headline_1.role = "hal-header"
+    # STOP FLICKER: Revert to base role
+    self.headline_1.role = "hal-header"
 
-  row = self.get_lowest_empty_row(ai_col)
-  if row is not None:
-    self.make_move(row, ai_col, 2)
-    if self.check_winner(2):
-      self.label_status.text = "I'm afraid I can't let you win."
-      self.label_status.foreground = "red"
-      self.game_over = True
-    else:
-      self.label_status.text = "Your move."
-      self.label_status.foreground = "black"
-      self.current_player = 1
+    row = self.get_lowest_empty_row(ai_col)
+    if row is not None:
+      self.make_move(row, ai_col, 2)
+      if self.check_winner(2):
+        self.label_status.text = "I'm afraid I can't let you win."
+        self.label_status.foreground = "red"
+        self.game_over = True
+      else:
+        self.label_status.text = "Your move."
+        self.label_status.foreground = "black"
+        self.current_player = 1
 
   def check_winner(self, player):
     """Scans the 6x7 board for four connecting pieces"""
@@ -138,7 +147,7 @@ class Form1(Form1Template):
     return False
 
   def btn_read_more_click(self, **event_args):
-    """Navigate to the full technical report"""
+    """Requirement #2: Navigate to full technical report"""
     open_form('ReportPage')
 
   def restart_btn_click(self, **event_args):
