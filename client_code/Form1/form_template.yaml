@@ -249,9 +249,7 @@ components:
     - event_bindings: {click: btn_read_more_click}
       layout_properties: {col_xs: 8, row: PJTZRX, width_xs: 3}
       name: button_2
-      properties:
-        role: [raised, white-button]
-        text: Read about me!
+      properties: {role: null, text: Read about me!}
       type: Button
     - layout_properties: {col_xs: 0, row: SKUVKZ, width_xs: 1}
       name: cell_5_0

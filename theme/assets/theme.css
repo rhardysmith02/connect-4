@@ -894,3 +894,19 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   font-weight: bold !important;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3) !important;
 }
+
+/* Ghost button for technical report */
+.anvil-role-info-button .btn {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 25px !important; /* Pills-shaped for variety */
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.anvil-role-info-button .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ff0000 !important; /* Glows red on hover */
+  color: #ff0000 !important;
+}

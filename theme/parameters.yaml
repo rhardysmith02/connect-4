@@ -184,3 +184,4 @@ roles:
 - {name: hal-eye}
 - {name: raised-slot}
 - {name: bright-dropdown}
+- {name: info-button}
