@@ -843,3 +843,22 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
 .anvil-role-white-button .btn:hover {
   background-color: #f8f8f8 !important;
 }
+
+/* HAL 9000 Header Style */
+.anvil-role-hal-header {
+  background-color: #000000 !important;
+  color: #ff0000 !important; /* HAL's signature red */
+  font-family: 'Courier New', Courier, monospace;
+  border-bottom: 2px solid #ff0000;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+/* Red "Eye" Status Indicator */
+.anvil-role-hal-eye {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ff0000 0%, #8b0000 70%, #000000 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ff0000;
+  margin: 10px auto;
+}
