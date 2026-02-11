@@ -1,10 +1,14 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'GCYDCI,SSZOVI'}
+  - layout_properties: {grid_position: 'DEEFBM,OFGZQF'}
+    name: timer_1
+    properties: {interval: 0}
+    type: Timer
+  - layout_properties: {grid_position: 'DEEFBM,DLONNQ GCYDCI,SSZOVI'}
     name: text_area_2
     properties: {height: 109.18359375, text: 'Rules of Da Game:'}
     type: TextArea
-  - layout_properties: {grid_position: 'XHGRGG,OASNTW'}
+  - layout_properties: {grid_position: 'DEEFBM,DLONNQ XHGRGG,OASNTW'}
     name: label_status
     properties: {}
     type: Label
@@ -269,7 +273,7 @@ components:
       name: cell_5_6
       properties: {role: circular, text: '(5, 6)'}
       type: Button
-    layout_properties: {grid_position: 'OMCQXQ,BCIOCS'}
+    layout_properties: {grid_position: 'DEEFBM,DLONNQ OMCQXQ,BCIOCS'}
     name: grid_panel_1
     properties:
       role: game-board
@@ -292,7 +296,7 @@ components:
   properties: {role: headline, text: 'From: Hardy Smith, Kumar Rishu, Pranit Yadav, & Connor Flaherty'}
   type: Label
 - layout_properties: {slot: top-left-btn}
-  name: label_1
+  name: hal_eye
   properties: {role: hal-eye}
   type: Label
 container:
