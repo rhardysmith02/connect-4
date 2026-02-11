@@ -13,3 +13,7 @@ class ReportPage(ReportPageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def btn_back_click(self, **event_args):
+    """Return to the main game"""
+    open_form('Form1')
