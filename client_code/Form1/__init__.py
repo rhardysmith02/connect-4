@@ -84,36 +84,35 @@ class Form1(Form1Template):
       print(f"Error: Component {cell_name} not found.")
 
   def call_ai_on_aws(self):
-    """Requirement #3: Sends the board and bot choice to Lightsail with HAL flicker"""
-    # 1. Start the HAL eye flicker (Fast interval in seconds)
-    self.timer_1.interval = 0.15 
-    self.label_status.text = "HAL 9000-1 is calculating..."
-    self.label_status.foreground = "orange"
+    """Revised for Integrated CSS Eye"""
+    # 2. START FLICKER: Add the thinking class to the header role
+  # (Assuming your header component is named headline_1)
+  self.headline_1.role = ["hal-header", "hal-thinking"]
 
-    # 2. Get the bot choice and request the move
-    selected_bot = self.drop_down_opponent.selected_value
-    try:
-      ai_col = anvil.server.call('get_move', self.board, selected_bot) 
-    except Exception as e:
-      print(f"Server Error: {e}")
-      ai_col = 0 # Safety fallback
+  self.label_status.text = "HAL 9000-1 is calculating..."
+  self.label_status.foreground = "orange"
 
-    # 3. Stop the flicker and ensure the eye stays ON
-    self.timer_1.interval = 0
-    self.hal_eye.visible = True
+  selected_bot = self.drop_down_opponent.selected_value
+  try:
+    ai_col = anvil.server.call('get_move', self.board, selected_bot) 
+  except Exception as e:
+    print(f"Server Error: {e}")
+    ai_col = 0 
 
-    # 4. Process the result
-    row = self.get_lowest_empty_row(ai_col)
-    if row is not None:
-      self.make_move(row, ai_col, 2)
-      if self.check_winner(2):
-        self.label_status.text = "I'm afraid I can't let you win."
-        self.label_status.foreground = "red"
-        self.game_over = True
-      else:
-        self.label_status.text = "Your move."
-        self.label_status.foreground = "black"
-        self.current_player = 1
+    # 3. STOP FLICKER: Remove the thinking class
+  self.headline_1.role = "hal-header"
+
+  row = self.get_lowest_empty_row(ai_col)
+  if row is not None:
+    self.make_move(row, ai_col, 2)
+    if self.check_winner(2):
+      self.label_status.text = "I'm afraid I can't let you win."
+      self.label_status.foreground = "red"
+      self.game_over = True
+    else:
+      self.label_status.text = "Your move."
+      self.label_status.foreground = "black"
+      self.current_player = 1
 
   def check_winner(self, player):
     """Scans the 6x7 board for four connecting pieces"""
@@ -149,7 +148,3 @@ class Form1(Form1Template):
     self.current_player = 1
     self.reset_board_ui()
     Notification("Memory banks cleared. System restarted.").show()
-
-def timer_1_tick(self, **event_args):
-  """Toggles visibility to create the HAL flicker"""
-  self.hal_eye.visible = not self.hal_eye.visible

@@ -844,35 +844,36 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   background-color: #f8f8f8 !important;
 }
 
-/* The Black Header Bar */
+/* Combined HAL Header and Eye */
 .anvil-role-hal-header {
   background-color: #000000 !important;
   border-bottom: 2px solid #ff0000 !important;
-  position: relative !important; /* Forces the eye to stay inside this box */
-  padding: 15px 0 !important;
+  position: relative !important;
+  padding: 20px 0 !important;
   min-height: 80px !important;
-  overflow: visible !important;
-}
-
-/* Restoring the original HAL Red-Glow Font Style */
-.anvil-role-hal-header .anvil-component {
+  /* Font Style */
   color: #ff0000 !important;
   font-family: 'Courier New', monospace !important;
   font-weight: bold !important;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
   text-align: center !important;
-  width: 100%;
 }
 
-/* The Eye Overlay */
-.anvil-role-hal-eye {
-  position: absolute !important;
-  left: 30px !important; /* Distance from left edge */
-  top: 50% !important;
-  transform: translateY(-50%) !important; /* Perfect vertical center */
-  width: 40px !important;
-  height: 40px !important;
-  z-index: 100 !important;
+/* The Eye created as a part of the Header */
+.anvil-role-hal-header:before {
+  content: "";
+  position: absolute;
+  left: 30px; /* Position from left */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* HAL Eye visual */
+  background: radial-gradient(circle, #ff0000 10%, #440000 80%, #000000 100%);
+  box-shadow: 0 0 15px #ff0000;
+  border: 2px solid #333;
+  z-index: 1;
 }
 
 /* Raised slot with center dot */
@@ -926,4 +927,15 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   background-color: rgba(255, 255, 255, 0.1) !important;
   border-color: #ff0000 !important; /* Glows red on hover */
   color: #ff0000 !important;
+}
+
+/* This class will be toggled by Python when HAL is "thinking" */
+.anvil-role-hal-header.hal-thinking:before {
+  animation: hal-pulse 0.2s infinite ease-in-out;
+}
+
+@keyframes hal-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
 }
