@@ -4,11 +4,13 @@ components:
     name: timer_1
     properties: {interval: 0}
     type: Timer
-  - layout_properties: {grid_position: 'UYMXRG,UXOEDN'}
+  - layout_properties: {grid_position: 'IXJBWE,TCDKPQ'}
     name: hal_eye
-    properties: {role: hal-eye}
+    properties:
+      role: [hal-eye]
+      visible: true
     type: Label
-  - layout_properties: {grid_position: 'IWCXCY,CDQZAL'}
+  - layout_properties: {grid_position: 'EAGAEF,XBZMZZ'}
     name: headline_1
     properties:
       bold: true

@@ -844,33 +844,35 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   background-color: #f8f8f8 !important;
 }
 
-/* Ensure the header bar is the container */
+/* The Black Header Bar */
 .anvil-role-hal-header {
   background-color: #000000 !important;
-  border: 2px solid #ff0000 !important;
-  position: relative !important; /* This is the anchor for the eye */
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-bottom: 2px solid #ff0000 !important;
+  position: relative !important; /* Forces the eye to stay inside this box */
+  padding: 15px 0 !important;
+  min-height: 80px !important;
+  overflow: visible !important;
 }
 
-/* Position the eye OVER the bar */
-.anvil-role-hal-eye {
-  position: absolute !important;
-  left: 20px !important; /* Moves it to the far left of the black bar */
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: 40px;
-  height: 40px;
-  z-index: 10;
-}
-
-/* Ensure the title text doesn't overlap the eye */
+/* Restoring the original HAL Red-Glow Font Style */
 .anvil-role-hal-header .anvil-component {
   color: #ff0000 !important;
   font-family: 'Courier New', monospace !important;
-  margin-left: 60px; /* Pushes text right so the eye has room */
+  font-weight: bold !important;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* The Eye Overlay */
+.anvil-role-hal-eye {
+  position: absolute !important;
+  left: 30px !important; /* Distance from left edge */
+  top: 50% !important;
+  transform: translateY(-50%) !important; /* Perfect vertical center */
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 100 !important;
 }
 
 /* Raised slot with center dot */
