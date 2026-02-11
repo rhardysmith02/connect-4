@@ -95,6 +95,15 @@ class Form1(Form1Template):
 
   def call_ai_on_aws(self):
     """Requirement #3: Sends board to AWS with integrated CSS flicker"""
+    # Validation: Ensure a bot is selected
+    selected_bot = self.drop_down_opponent.selected_value
+
+    if selected_bot is None:
+      self.label_status.text = "Error: Select an opponent before HAL can move."
+      self.label_status.foreground = "red"
+      # Reset current_player to 1 so the user can still click
+      self.current_player = 1 
+      return
     # START FLICKER: Use a list to apply multiple roles
     self.headline_1.role = ["hal-header", "hal-thinking"]
 
@@ -151,9 +160,29 @@ class Form1(Form1Template):
     open_form('ReportPage')
 
   def restart_btn_click(self, **event_args):
-    """Requirement #4: Fully resets the game state"""
+    """Requirement #4: Fully resets the game state with turn selection"""
+    # 1. Reset logic
     self.board = [[0 for _ in range(7)] for _ in range(6)]
     self.game_over = False
-    self.current_player = 1
     self.reset_board_ui()
+
+    # 2. Check the toggle (Assume you used a CheckBox named check_hal_starts)
+    if self.check_hal_starts.checked:
+      self.current_player = 2
+      # We call AI immediately
+      self.call_ai_on_aws()
+    else:
+      self.current_player = 1
+      self.label_status.text = "I am ready to begin. Your move."
+      self.label_status.foreground = "black"
+
     Notification("Memory banks cleared. System restarted.").show()
+
+  @handle("check_hal_starts", "change")
+  def check_hal_starts_change(self, **event_args):
+    """Triggers HAL immediately if the box is checked mid-game"""
+    if self.check_hal_starts.checked and self.current_player == 1 and not self.game_over:
+      # Check if the board is empty (it's the start of the game)
+      if all(cell == 0 for row in self.board for cell in row):
+        self.current_player = 2
+        self.call_ai_on_aws()

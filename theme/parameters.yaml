@@ -186,3 +186,4 @@ roles:
 - {name: bright-dropdown}
 - {name: info-button}
 - {name: hal-thinking}
+- {name: hal-checkbox}

@@ -127,14 +127,11 @@ components:
       name: cell_0_6
       properties: {role: circular, text: '(0, 6)'}
       type: Button
-    - layout_properties: {col_xs: 8, row: GSERER, width_xs: 1}
-      name: text_area_1
-      properties: {text: Wh}
-      type: TextArea
-    - layout_properties: {col_xs: 9, row: GSERER, width_xs: 1}
-      name: radio_button_1
-      properties: {text: radio_button_1}
-      type: RadioButton
+    - event_bindings: {}
+      layout_properties: {col_xs: 8, row: GSERER, width_xs: 4}
+      name: check_hal_starts
+      properties: {role: hal-checkbox, text: Let Hal  go first}
+      type: CheckBox
     - layout_properties: {col_xs: 1, row: NMZYVH, width_xs: 1}
       name: cell_1_1
       properties: {role: circular, text: '(1, 1)'}

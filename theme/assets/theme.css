@@ -940,3 +940,11 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   50% { opacity: 0.3; }
   100% { opacity: 1; }
 }
+
+/* HAL themed checkbox/switch */
+.anvil-role-hal-checkbox {
+  color: #ff0000 !important;
+  font-family: 'Courier New', monospace !important;
+  text-shadow: 0 0 5px #ff0000 !important;
+  font-weight: bold !important;
+}
