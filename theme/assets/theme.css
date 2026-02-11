@@ -862,3 +862,35 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   box-shadow: 0 0 15px #ff0000;
   margin: 10px auto;
 }
+
+/* Raised white square role for column slots */
+.anvil-role-raised-slot .btn {
+  background-color: #ffffff !important;
+  color: #1e3a6d !important;
+  border-radius: 8px !important; /* Rounded edges */
+  font-weight: bold !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid #ddd !important;
+  transition: all 0.2s ease !important;
+}
+
+.anvil-role-raised-slot .btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.anvil-role-raised-slot .btn:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Brightened HAL Dropdown */
+.anvil-role-bright-dropdown select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ff0000 !important; /* HAL red border */
+  border-radius: 4px !important;
+  padding: 5px !important;
+  font-weight: bold !important;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3) !important;
+}

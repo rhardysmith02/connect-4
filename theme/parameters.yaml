@@ -180,3 +180,7 @@ roles:
 - {components: null, name: circular}
 - {components: null, name: game-board}
 - {components: null, name: white-button}
+- {name: hal-header}
+- {name: hal-eye}
+- {name: raised-slot}
+- {name: bright-dropdown}

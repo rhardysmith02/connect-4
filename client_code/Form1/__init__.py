@@ -39,7 +39,7 @@ class Form1(Form1Template):
       return
 
     # Identify which column was clicked using the 'Tag' property
-    col_index = event_args['sender'].tag 
+    col_index = event_args['sender'].tag
 
     if self.current_player == 1:
       row = self.get_lowest_empty_row(col_index)

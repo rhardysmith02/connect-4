@@ -19,41 +19,64 @@ components:
     properties: {}
     type: Label
   - components:
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '0', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 0, row: IRRDGZ, width_xs: 1}
       name: button_3
-      properties: {text: button_3}
+      properties: {role: raised-slot, text: button_3}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '1', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 1, row: IRRDGZ, width_xs: 1}
       name: button_4
-      properties: {text: button_4}
+      properties: {role: raised-slot, text: button_4}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '2', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 2, row: IRRDGZ, width_xs: 1}
       name: button_5
-      properties: {text: button_5}
+      properties: {role: raised-slot, text: button_5}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '3', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 3, row: IRRDGZ, width_xs: 1}
       name: button_6
-      properties: {text: button_6}
+      properties: {role: raised-slot, text: button_6}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '4', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 4, row: IRRDGZ, width_xs: 1}
       name: button_7
-      properties: {text: button_7}
+      properties: {role: raised-slot, text: button_7}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '5', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 5, row: IRRDGZ, width_xs: 1}
       name: button_8
-      properties: {text: button_8}
+      properties: {role: raised-slot, text: button_8}
       type: Button
-    - event_bindings: {click: column_click}
+    - data_bindings:
+      - {code: '6', property: tag, writeback: false}
+      event_bindings: {click: column_click}
       layout_properties: {col_xs: 6, row: IRRDGZ, width_xs: 1}
       name: button_9
-      properties: {text: button_9}
+      properties: {role: raised-slot, text: button_9}
       type: Button
+    - event_bindings: {}
+      layout_properties: {col_xs: 8, row: IRRDGZ, width_xs: 3}
+      name: drop_down_opponent
+      properties:
+        include_placeholder: true
+        items: [CNN, Transformer]
+        placeholder: 'Choose your opponent:'
+        role: bright-dropdown
+      type: DropDown
     - data_bindings:
       - {code: '0', property: tag, writeback: false}
       event_bindings: {click: column_click}
@@ -107,15 +130,6 @@ components:
       name: cell_0_6
       properties: {role: circular, text: '(0, 6)'}
       type: Button
-    - event_bindings: {}
-      layout_properties: {col_xs: 8, row: GSERER, width_xs: 3}
-      name: drop_down_opponent
-      properties:
-        include_placeholder: true
-        items: [CNN, Transformer]
-        placeholder: 'Choose your opponent:'
-        role: null
-      type: DropDown
     - layout_properties: {col_xs: 1, row: NMZYVH, width_xs: 1}
       name: cell_1_1
       properties: {role: circular, text: '(1, 1)'}
