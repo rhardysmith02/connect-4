@@ -5,12 +5,30 @@ components:
     properties:
       bold: true
       role: [hal-header, headline, hal-thinking]
-      text: 'Your Connect4 Pal: HAL 9000-1'
+      text: 'Your Connect-4 Pal: HAL 9000-1'
     type: Label
-  - layout_properties: {grid_position: 'GCYDCI,SSZOVI'}
-    name: text_area_2
-    properties: {height: 109.18359375, text: 'Rules of Da Game:'}
-    type: TextArea
+  - components:
+    - layout_properties: {}
+      name: rich_text_2
+      properties:
+        content: |-
+          ### 🔴 SYSTEM PROTOCOLS:
+          Welcome, User. You are authorized to engage the **HAL 9000-1** unit in a tactical simulation of Connect-4.
+
+          **Operational Parameters:**
+          * **Objective**: Connect four of your red tactical markers in a horizontal, vertical, or diagonal sequence before the machine achieves the same with yellow.
+          * **Initialization**: Select your opponent architecture (CNN or Transformer) from the dropdown menu before engagement.
+          * **Initiative**: Toggle the "Let Hal go first" protocol if you wish for the machine to take the opening move.
+          * **Deployment**: Click any of the white hardware slots above the board to drop a marker into that column.
+
+          *"I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do." - HAL 9000*
+      type: RichText
+    layout_properties: {grid_position: 'VAKIPT,EXPELN'}
+    name: rich_text_1
+    properties:
+      content: |
+        ## **How to Play Against HAL:**
+    type: RichText
   - layout_properties: {grid_position: 'XHGRGG,OASNTW'}
     name: label_status
     properties: {}
